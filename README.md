@@ -1,7 +1,13 @@
 ﻿cloud_based_potato_disease_classification
 
-A CNN based potato disease classification model is presented in this work. The model is trained in `CNN_based_potato_disease_classification.ipynb' file. The model is served in two ways. One with using fastapi in `api.py' file and second is with using fastapi and tf-serving in `api-tf-serving' file. The PlantVillage dataset obtained from kaggle is also available as a zip file.
+The model is deployed by creating Ubuntu linux virtual machine using AWS EC2 service. 
 
-The Docker command for creating image of tensorflow model using tf-serving is:
+Linuc commands for creating server are:
 
-docker run -t --rm -p 8501:8501 -v C:/Users/Muhammad` Shahroz/PycharmProjects/potato-disease:/potato-disease tensorflow/serving --rest_api_port=8501 --model_config_file=/potato-disease/models.config
+sudo -s
+
+sudo apt-get update && sudo apt-get install python3-pip
+
+pip install -r requirements.txt
+
+python3 main.py 
